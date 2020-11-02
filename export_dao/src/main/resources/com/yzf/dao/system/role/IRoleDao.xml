@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!--namespace: 需要映射的Dao接口类型-->
+<mapper namespace="com.yzf.dao.system.role.IRoleDao">
+
+    <select id="findAll" resultMap="roleMap">
+        select * from pe_role
+    </select>
+    <resultMap id="roleMap" type="role">
+        <id column="role_id" property="roleId"></id>
+        <result column="order_no" property="orderNo"></result>
+        <result column="create_by"  property="createBy"></result>
+        <result column="create_dept" property="createDept"></result>
+        <result column="create_time" property="createTime"></result>
+        <result column="update_by"  property="updateBy"></result>
+        <result column="update_time"  property="updateTime"></result>
+        <result column="company_id" property="companyId"></result>
+        <result column="company_name" property="companyName"></result>
+    </resultMap>
+
+</mapper>
