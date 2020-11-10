@@ -9,11 +9,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/home")
 public class HomeController {
 
-    @RequestMapping(path = "/main",method = RequestMethod.GET)
+    @RequestMapping(path = "/toMain",method = RequestMethod.GET)
     public String main(){
 
-        return ("home/main");
+        return "home/main";
 
     }
+    @RequestMapping(path = "/home",method = {RequestMethod.GET,RequestMethod.POST})
+    public String home(){
 
+        return "welcome";
+
+    }
 }

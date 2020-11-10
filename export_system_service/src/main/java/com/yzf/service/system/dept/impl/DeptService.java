@@ -21,8 +21,29 @@ public class DeptService implements IDeptService {
 
         PageHelper.startPage(currentPage,pageSize);
 
-        List<Dept> list = iDeptDao.findAll();
+        List<Dept> list = iDeptDao.findAll(companyId);
 
         return new PageInfo<Dept>(list);
+    }
+
+    public void updateDept(Dept dept) {
+
+        dept.setCompanyId("1");
+        dept.setCompanyName("吉首大学");
+
+       iDeptDao.update(dept);
+
+    }
+
+    public Dept findById(String deptId) {
+
+        Dept list = iDeptDao.findById(deptId);
+
+        return list;
+    }
+
+    public List<Dept> findAll(String companyId) {
+        List<Dept> list = iDeptDao.findDept(companyId);
+        return list;
     }
 }

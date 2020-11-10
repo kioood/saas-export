@@ -213,7 +213,7 @@
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <img src="${path}/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                        <span class="hidden-xs"> ${sessionScope.user.userName}</span>
+                        <span class="hidden-xs"> ${sessionScope.loginUser.userName}</span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
@@ -221,7 +221,7 @@
                             <img src="${path}/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                             <p>
-                                ${sessionScope.user.userName}
+                                ${sessionScope.loginUser.userName}
                             </p>
                         </li>
                         <!-- Menu Body
@@ -244,7 +244,7 @@
                                 <a href="#" class="btn btn-default btn-flat">修改密码</a>
                             </div>
                             <div class="pull-right">
-                                <a href="/logout.do" class="btn btn-default btn-flat">注销</a>
+                                <a href="${path}/system/user/loginOut.do" class="btn btn-default btn-flat">注销</a>
                             </div>
                         </li>
                     </ul>

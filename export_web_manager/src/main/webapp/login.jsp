@@ -1,4 +1,5 @@
-<%@ page contentType="text/html; charset=utf-8"%>
+<%@ page contentType="text/html; charset=utf-8" isELIgnored="false" %>
+<% pageContext.setAttribute("path",request.getContextPath());%>
 <!DOCTYPE html>
 <html>
 
@@ -7,11 +8,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>数据 - AdminLTE2定制版 | Log in</title>
     <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
-    <link rel="stylesheet" href="../plugins/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../plugins/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../plugins/ionicons/css/ionicons.min.css">
-    <link rel="stylesheet" href="../plugins/adminLTE/css/AdminLTE.css">
-    <link rel="stylesheet" href="../plugins/iCheck/square/blue.css">
+    <link rel="stylesheet" href="${path}/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="${path}/plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="${path}/plugins/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="${path}/plugins/adminLTE/css/AdminLTE.css">
+    <link rel="stylesheet" href="${path}/plugins/iCheck/square/blue.css">
 </head>
 
 <script>
@@ -30,7 +31,7 @@
     <!-- /.login-logo -->
     <div class="login-box-body">
         <p class="login-box-msg">登录系统</p>
-        <form action="/login.do" method="post">
+        <form action="${path}/system/user/login.do" method="post">
             <div class="form-group has-feedback">
                 <input type="email" name="email" class="form-control" placeholder="Email">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
@@ -57,9 +58,9 @@
         </div>
     </div>
 </div>
-<script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
-<script src="../plugins/bootstrap/js/bootstrap.min.js"></script>
-<script src="../plugins/iCheck/icheck.min.js"></script>
+<script src="${path}/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="${path}/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="${path}/plugins/iCheck/icheck.min.js"></script>
 <script>
     $(function() {
         $('input').iCheck({

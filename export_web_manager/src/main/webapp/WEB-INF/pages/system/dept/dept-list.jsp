@@ -26,7 +26,7 @@
         }
     }
 </script>
-${pi}
+
 <body>
 <div id="frameContent" class="content-wrapper" style="margin-left:0px;">
 <section class="content-header">
@@ -58,7 +58,7 @@ ${pi}
                 <div class="pull-left">
                     <div class="form-group form-inline">
                         <div class="btn-group">
-                            <button type="button" class="btn btn-default" title="新建" onclick='location.href="/system/dept/toAdd.do"'><i class="fa fa-file-o"></i> 新建</button>
+                            <button type="button" class="btn btn-default" title="新建" onclick='location.href="${path}/system/dept/toAdd.do"'><i class="fa fa-file-o"></i> 新建</button>
                             <button type="button" class="btn btn-default" title="删除" onclick='deleteById()'><i class="fa fa-trash-o"></i> 删除</button>
                             <button type="button" class="btn btn-default" title="刷新" onclick="window.location.reload();"><i class="fa fa-refresh"></i> 刷新</button>
                         </div>
@@ -87,14 +87,14 @@ ${pi}
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach items="${page.rows}" var="dept"  varStatus="st">
+                    <c:forEach items="${pi.list}" var="dept"  varStatus="st">
                         <tr>
-                            <td><input type="checkbox" name="id" value="${dept.id }"/></td>
+                            <td><input type="checkbox" name="id" value="${dept.deptId}"/></td>
                             <td>${st.count }</td>
-                            <td>${dept.id }</td>
+                            <td>${dept.deptId }</td>
                             <td>${dept.parent.deptName }</td>
-                            <td><a href="/system/dept/toUpdate.do?id=${dept.id }">${dept.deptName }</a></td>
-                            <th class="text-center"><button type="button" class="btn bg-olive btn-xs" onclick='location.href="/system/dept/toUpdate.do?id=${dept.id}"'>编辑</button></th>
+                            <td><a href="${path}/system/dept/toUpdate.do?id=${dept.deptId }">${dept.deptName }</a></td>
+                            <th class="text-center"><button type="button" class="btn bg-olive btn-xs" onclick='location.href="${path}/system/dept/toUpdate.do?deptId=${dept.deptId}"'>编辑</button></th>
                         </tr>
                     </c:forEach>
                     </tbody>
@@ -103,7 +103,7 @@ ${pi}
         </div>
         <div class="box-footer">
             <jsp:include page="../../common/page.jsp">
-                <jsp:param value="${ctx}/system/dept/list.do" name="pageUrl"/>
+                <jsp:param value="${path}/system/dept/tolist.do" name="pageUrl"/>
             </jsp:include>
         </div>
     </div>
