@@ -4,7 +4,7 @@
 <mapper namespace="com.yzf.dao.system.role.IRoleDao">
 
     <select id="findAll" resultMap="roleMap">
-        select * from pe_role
+        select * from pe_role where company_id=#{companyId} order by order_no
     </select>
     <resultMap id="roleMap" type="role">
         <id column="role_id" property="roleId"></id>
@@ -17,5 +17,64 @@
         <result column="company_id" property="companyId"></result>
         <result column="company_name" property="companyName"></result>
     </resultMap>
+
+    <insert id="save" parameterType="role">
+        insert into pe_role
+        (
+        role_id       ,
+        name          ,
+        remark        ,
+        order_no      ,
+        create_by     ,
+        create_dept   ,
+        create_time   ,
+        update_by     ,
+        update_time   ,
+        company_id    ,
+        company_name
+        )
+        values
+        (
+        #{roleId      },
+        #{name        },
+        #{remark      },
+        #{orderNo     },
+        #{createBy    },
+        #{createDept  },
+        #{createTime  },
+        #{updateBy    },
+        #{updateTime  },
+        #{companyId   },
+        #{companyName }
+
+        )
+
+    </insert>
+
+
+    <select id="findById" parameterType="string" resultMap="roleMap">
+        select * from pe_role where role_id=#{roleId}
+    </select>
+
+    <update id="update" parameterType="role">
+            update pe_role set
+
+            name         = #{name       },
+            remark       = #{remark     },
+            order_no     = #{orderNo    },
+            create_by    = #{createBy   },
+            create_dept  = #{createDept },
+            create_time  = #{createTime },
+            update_by    = #{updateBy   },
+            update_time  = #{updateTime },
+            company_id   = #{companyId  },
+            company_name = #{companyName}
+
+            where role_id = #{roleId}
+    </update>
+
+    <delete id="deleteById" parameterType="string">
+            delete from pe_role where role_id=#{roleId}
+    </delete>
 
 </mapper>

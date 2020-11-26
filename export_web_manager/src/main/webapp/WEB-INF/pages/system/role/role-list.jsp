@@ -21,7 +21,15 @@
         var id = getCheckId()
         if(id) {
             if(confirm("你确认要删除此条记录吗？")) {
-                location.href="/system/role/delete.do?id="+id;
+                // location.href="/system/role/delete.do?id="+id;
+                //使用ajax请求
+                var url= '${path}/system/role/delete.do?roleId='+id;
+                var fn = function(result){ //{code:200,msg:'删除成功',data:null}
+                    //弹出提示
+                    alert(result.msg)
+                    window.location.reload() //重新加载
+                }
+                $.get(url,fn,'json')
             }
         }else{
             alert("请勾选待处理的记录，且每次只能勾选一个")

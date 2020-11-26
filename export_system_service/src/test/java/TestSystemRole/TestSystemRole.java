@@ -38,18 +38,10 @@ public class TestSystemRole {
     @Test
     public void test2() {
 
-         int i[] = new int[9];
+         char a[]=new char[2];
 
-         System.out.println(i[1]);
+         System.out.println(a[0]);
 
-            String a;
-    }
-    @Test
-    public void test3() {
-
-        int i;
-
-        System.out.println();
 
     }
 

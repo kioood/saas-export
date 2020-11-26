@@ -56,4 +56,22 @@ public class TestMd5 {
             l.info("用户不存在");
         }
     }
+    @Test
+    public void test6(){
+        int arr[][]={{1,2,2},{2,2,5},{4,4}};
+        boolean found =false;
+        for(int i=0;i<arr.length&&!found;i++)
+        {
+            for(int j=0;j<arr[i].length;j++)
+            {
+
+                if(arr[i][j]==5)
+                {
+                    System.out.println("i="+i+",j="+j);
+                    found=true;
+                    break;
+                }
+            }
+        }
+    }
 }

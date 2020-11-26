@@ -27,15 +27,17 @@
         </li>
     </ul>
 </div>
-<form id="pageForm" action="${param.pageUrl}" method="post">
-    <input type="hidden" name="currentPage" id="currentPage">
-    <input type="hidden" name="pageSize" id="pageSize">
-</form>
+<%--<form id="pageForm" action="${param.pageUrl}" method="post">--%>
+<%--    <input type="hidden" name="curr" id="curr">--%>
+<%--    <input type="hidden" name="pageSize" id="pageSize">--%>
+<%--</form>--%>
 <script>
     function goPage(page) {
-        document.getElementById("currentPage").value = page
-        document.getElementById("pageSize").value = ${pi.pageSize}
-        document.getElementById("pageForm").submit()
+        <%--document.getElementById("curr").value = page //curr=2--%>
+        <%--document.getElementById("pageSize").value = ${pi.pageSize} //pageSize=3--%>
+        <%--document.getElementById("pageForm").submit()--%>
+        //get 修改地址的数据
+        window.location='${param.pageUrl}?curr='+page+'&pageSize='+ ${pi.pageSize}
     }
 </script>
 </body>

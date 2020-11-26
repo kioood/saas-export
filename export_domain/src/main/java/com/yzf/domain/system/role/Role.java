@@ -15,7 +15,13 @@ public class Role {
     private Date updateTime;
     private String companyId;
     private String companyName;
-
+    private boolean checked;//在角色列表中打上勾
+    public boolean isChecked() {
+        return checked;
+    }
+    public void setChecked(boolean checked) {
+        this.checked = checked;
+    }
     public Role() {
     }
 
